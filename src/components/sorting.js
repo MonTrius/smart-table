@@ -1,4 +1,3 @@
-import { act } from "react";
 import {sortCollection, sortMap} from "../lib/sort.js";
 
 export function initSorting(columns) {
