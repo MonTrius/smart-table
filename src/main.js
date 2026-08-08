@@ -1,7 +1,7 @@
 import './fonts/ys-display/fonts.css'
 import './style.css'
 
-import {data as sourceData} from "./data/dataset_1.js";
+import {data as sourceData} from "./data/dataset_3.js";
 
 import {initData} from "./data.js";
 import {processFormData} from "./lib/utils.js";
@@ -10,8 +10,16 @@ import {initTable} from "./components/table.js";
 // @todo: подключение
 
 import {initPagination} from "./components/pagination.js";
+<<<<<<< HEAD
 import {initSorting} from "./components/sorting.js";
 import {initFiltering} from "./components/filtering.js";
+=======
+
+import {initSorting} from "./components/sorting.js";
+
+import {initFiltering} from "./components/filtering.js";
+
+>>>>>>> f686ac7d6a06abc604c1c413f87fe472030cf890
 import {initSearching} from "./components/searching.js";
 
 
@@ -83,6 +91,10 @@ const applyFiltering = initFiltering(sampleTable.filter.elements, {    // пер
 });
 
 const applySearching = initSearching ('search');
+<<<<<<< HEAD
+=======
+
+>>>>>>> f686ac7d6a06abc604c1c413f87fe472030cf890
 
 const appRoot = document.querySelector('#app');
 appRoot.appendChild(sampleTable.container);
