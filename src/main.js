@@ -10,11 +10,8 @@ import {initTable} from "./components/table.js";
 // @todo: подключение
 
 import {initPagination} from "./components/pagination.js";
-
 import {initSorting} from "./components/sorting.js";
-
 import {initFiltering} from "./components/filtering.js";
-
 import {initSearching} from "./components/searching.js";
 
 
@@ -86,7 +83,6 @@ const applyFiltering = initFiltering(sampleTable.filter.elements, {    // пер
 });
 
 const applySearching = initSearching ('search');
-
 
 const appRoot = document.querySelector('#app');
 appRoot.appendChild(sampleTable.container);
