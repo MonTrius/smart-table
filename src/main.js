@@ -7,12 +7,15 @@ import {initData} from "./data.js";
 import {processFormData} from "./lib/utils.js";
 
 import {initTable} from "./components/table.js";
-
 // @todo: подключение
-import {initPagination} from './components/pagination.js';
-import {initSorting} from './components/sorting.js';
-import {initFiltering} from './components/filtering.js';
-import {initSearching} from './components/searching.js';
+
+import {initPagination} from "./components/pagination.js";
+
+import {initSorting} from "./components/sorting.js";
+
+import {initFiltering} from "./components/filtering.js";
+
+import {initSearching} from "./components/searching.js";
 
 
 // Исходные данные используемые в render()
@@ -28,10 +31,10 @@ function collectState() {
     const page = parseInt(state.page ?? 1);                // номер страницы по умолчанию 1 и тоже число
 
     return {                                            // расширьте существующий return вот так
-    ...state,
-    rowsPerPage,
-    page
-};
+        ...state,
+        rowsPerPage,
+        page
+    }; 
 }
 
 /**
@@ -47,6 +50,7 @@ function render(action) {
     result = applySorting(result, state, action);
     result = applyPagination(result, state, action);
 
+
     sampleTable.render(result)
 }
 
@@ -58,6 +62,8 @@ const sampleTable = initTable({
 }, render);
 
 // @todo: инициализация
+
+
 const applyPagination = initPagination(
     sampleTable.pagination.elements,             // передаём сюда элементы пагинации, найденные в шаблоне
     (el, page, isCurrent) => {                    // и колбэк, чтобы заполнять кнопки страниц данными
@@ -68,7 +74,7 @@ const applyPagination = initPagination(
         label.textContent = page;
         return el;
     }
-);
+); 
 
 const applySorting = initSorting([        // Нам нужно передать сюда массив элементов, которые вызывают сортировку, чтобы изменять их визуальное представление
     sampleTable.header.elements.sortByDate,
@@ -79,7 +85,8 @@ const applyFiltering = initFiltering(sampleTable.filter.elements, {    // пер
     searchBySeller: indexes.sellers                                    // для элемента с именем searchBySeller устанавливаем массив продавцов
 });
 
-const applySearching = initSearching('search');
+const applySearching = initSearching ('search');
+
 
 const appRoot = document.querySelector('#app');
 appRoot.appendChild(sampleTable.container);
