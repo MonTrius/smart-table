@@ -8,10 +8,10 @@ import {processFormData} from "./lib/utils.js";
 
 import {initTable} from "./components/table.js";
 // @todo: подключение
-import {initSearching} from "./components/searching.js";
-import {initFiltering} from "./components/filtering.js";
-import {initSorting} from "./components/sorting.js";
 import {initPagination} from "./components/pagination.js";
+import {initSorting} from "./components/sorting.js";
+import {initFiltering} from "./components/filtering.js";
+import {initSearching} from "./components/searching.js";
 
 
 // Исходные данные используемые в render()
@@ -81,7 +81,7 @@ const applyFiltering = initFiltering(sampleTable.filter.elements, {    // пер
     searchBySeller: indexes.sellers                                    // для элемента с именем searchBySeller устанавливаем массив продавцов
 });
 
-const applySearching = initSearching ('search');
+const applySearching = initSearching('search');
 
 const appRoot = document.querySelector('#app');
 appRoot.appendChild(sampleTable.container);
