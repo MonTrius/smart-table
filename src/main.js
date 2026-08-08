@@ -7,7 +7,7 @@ import {initData} from "./data.js";
 import {processFormData} from "./lib/utils.js";
 
 import {initTable} from "./components/table.js";
-import { initSearching } from './components/searching.js';
+
 // @todo: подключение
 import { initPagination } from './components/pagination.js';
 import { initSorting } from './components/sorting.js';
