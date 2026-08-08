@@ -11,5 +11,5 @@ export function initSearching(searchField) {
     return (data, state, action) => {
         // @todo: #5.2 — применить компаратор
         return data.filter(row => compare(row, state));
-    }
+    };
 }
